@@ -13,6 +13,18 @@ public:
     */
     Vector();
 
+    /**
+    * Destructor which deletes and deallocates the array.
+    * Uses the Deallocate method function.
+    */
+    ~Vector();
+
+    /**
+    * Deallocates and releases the memory back to the system.
+    *
+    * @param The pointer that will be used to delete and release memory from.
+    */
+    void Deallocate(T *&ptr);
 
 private:
     unsigned m_capacity;
@@ -27,6 +39,22 @@ Vector<T>::Vector()
     m_capacity = INITIAL_VALUE;
     m_used = 0;
     m_array = new T[INITIAL_VALUE];
+}
+
+template<class T>
+Vector<T>::~Vector()
+{
+    Deallocate(m_array);
+}
+
+template<class T>
+void Vector<T>::Deallocate(T *&ptr)
+{
+    if(ptr != nullptr)
+    {
+        delete [] ptr;
+        ptr = nullptr;
+    }
 }
 
 #endif // VECTOR_H_INCLUDED
