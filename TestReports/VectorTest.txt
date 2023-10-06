@@ -1,0 +1,27 @@
+1. Default Constructor Test: m_capacity set to initial value of 2
+[PASS]: Expected: 2 | Actual: 2
+
+2. Default Constructor Test: m_used set to initial value of 0
+[PASS]: Expected: 0 | Actual: 0
+
+3. Default Constructor Test: m_array set to created dynamic address
+[PASS]: Pointer m_array is not pointing at nullptr
+
+4. Test Copy Member Function: Both dynamic array should have the same m_capacity
+[PASS]: Expected: 2 | Actual: 2
+
+5. Test Copy Member Function: Both dynamic array should have the same m_used
+[PASS]: Expected: 0 | Actual: 0
+
+6. Test Copy Member Function: Both dynamic array pointer should not point at the same pointer address
+[PASS]: Pointer array pointer is not pointing at the same address
+
+7. Test Copy Constructor: Both dynamic array capacity should be the same as set to 2
+[PASS]: Expected: 2 | Actual: 2
+
+8. Test Copy Constructor: Both dynamic array used should be the same as set to 0
+[PASS]: Expected: 0 | Actual: 0
+
+9. Test Copy Constructor: Both dynamic array pointer should be pointing at the same location
+[PASS]: Array pointer is not pointing at the same location
+

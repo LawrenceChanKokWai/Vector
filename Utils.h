@@ -20,7 +20,7 @@ public:
     * @param expected The expected value
     * @param actual The actual value returned from the the test
     */
-    void Assert(string titleOfTest, bool condition, T expected, T actual);
+    void Assert(string titleOfTest, bool condition, T expected, T actual, ostream &output);
 
     /**
     * Member function override that is  used in asserting the result of a particular test.
@@ -30,34 +30,41 @@ public:
     * @param passMessage The pass message that we provide
     * @param failMessage The fail message that we provide
     */
-    void Assert(string titleOfTest, bool condition, string passMessage, string failMessage);
+    void Assert(string titleOfTest, bool condition, string passMessage, string failMessage, ostream &output);
 };
 
 template<class T>
-void Utils<T>::Assert(string titleOfTest, bool condition, T expected, T actual)
+void Utils<T>::Assert(string titleOfTest, bool condition, T expected, T actual, ostream &output)
 {
     cout << titleOfTest << endl;
+    output << titleOfTest << endl;
     if(condition)
     {
-        cout << "[PASS]: " << "Expected: " << expected << " | Actual: " << actual  << endl;
+        cout << "[PASS]: " << "Expected: " << expected << " | Actual: " << actual  << endl << '\n';
+        output << "[PASS]: " << "Expected: " << expected << " | Actual: " << actual  << endl << '\n';
     }
     else
     {
-        cout << "[FAIL]: " << "Expected: " << expected << " | Actual: " << actual  << endl;
+        cout << "[FAIL]: " << "Expected: " << expected << " | Actual: " << actual  << endl << '\n';
+        output << "[FAIL]: " << "Expected: " << expected << " | Actual: " << actual  << endl << '\n';
     }
 }
 
 template<class T>
-void Utils<T>::Assert(string titleOfTest, bool condition, string passMessage, string failMessage)
+void Utils<T>::Assert(string titleOfTest, bool condition, string passMessage, string failMessage, ostream &output)
 {
     cout << titleOfTest << endl;
+    output << titleOfTest << endl;
+
     if(condition)
     {
-        cout << "[PASS]: " << passMessage <<  endl;
+        cout << "[PASS]: " << passMessage <<  endl << '\n';
+        output << "[PASS]: " << passMessage <<  endl << '\n';
     }
     else
     {
-        cout << "[FAIL]: " << failMessage <<  endl;
+        cout << "[FAIL]: " << failMessage <<  endl << '\n';
+        output << "[FAIL]: " << failMessage <<  endl << '\n';
     }
 }
 
