@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1696579724 source:c:\users\lawrence\dropbox\pc\desktop\vector\vectortest.cpp
+	<iostream>
+	"Vector.h"
+	"Utils.h"
+
+1696579096 c:\users\lawrence\dropbox\pc\desktop\vector\vector.h
+
+1696579825 c:\users\lawrence\dropbox\pc\desktop\vector\utils.h
+	<string>
+

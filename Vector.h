@@ -26,11 +26,35 @@ public:
     */
     void Deallocate(T *&ptr);
 
+    /**
+    * A Getter member function that is used to get the
+    * capacity value from the private member variable m_capacity.
+    *
+    * @return The capacity value from m_capacity.
+    */
+    unsigned GetCapacity() const;
+
+    /**
+    * A Getter member function that is used to get the
+    * used value from the private member variable m_used.
+    *
+    * @return The used value from m_used.
+    */
+    unsigned GetUsed() const;
+
+    /**
+    * A Getter member function that is used to get the
+    * array pointer address it's pointing from the private member variable m_array.
+    *
+    * @return The pointer pointing address value from m_array.
+    */
+    T *GetArray() const;
+
 private:
     unsigned m_capacity;
     unsigned m_used;
     T *m_array;
-    const unsigned INITIAL_VALUE(2);
+    const unsigned INITIAL_VALUE = 2;
 };
 
 template<class T>
@@ -55,6 +79,24 @@ void Vector<T>::Deallocate(T *&ptr)
         delete [] ptr;
         ptr = nullptr;
     }
+}
+
+template<class T>
+unsigned Vector<T>::GetCapacity() const
+{
+    return m_capacity;
+}
+
+template<class T>
+unsigned Vector<T>::GetUsed() const
+{
+    return m_used;
+}
+
+template<class T>
+T *Vector<T>::GetArray() const
+{
+    return m_array;
 }
 
 #endif // VECTOR_H_INCLUDED
