@@ -37,25 +37,28 @@
 12. Test Append Member Function: Appending first value used as 1
 [PASS]: Expected: 1 | Actual: 1
 
-Address After Appending First Number: 0xcc18d0
+Address After Appending First Number: 0xc31930
 13. Test Append Member Function: Appending second value capacity as 4
 [PASS]: Expected: 4 | Actual: 4
 
 14. Test Append Member Function: Appending second value used as 2
 [PASS]: Expected: 2 | Actual: 2
 
-Address After Appending Second Number: 0xcc0578
+Address After Appending Second Number: 0xc30578
 15. Test Append Member Function: Appending second value capacity as 8
 [PASS]: Expected: 8 | Actual: 8
 
 16. Test Append Member Function: Appending second value used as 3
 [PASS]: Expected: 3 | Actual: 3
 
-Address After Appending Third Number: 0xcca9f8
+Address After Appending Third Number: 0xc3a9f8
 17. Test Append Member Function: Appending second value capacity as 8
 [PASS]: Expected: 8 | Actual: 8
 
 18. Test Append Member Function: Appending second value used as 4
 [PASS]: Expected: 4 | Actual: 4
 
-Address After Appending Fourth Number: 0xcca9f8
+Address After Appending Fourth Number: 0xc3a9f8
+19. Test GetValueByIndex of 0 should be 10
+[PASS]: Index 0 returns value 10
+

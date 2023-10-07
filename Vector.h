@@ -93,6 +93,14 @@ public:
     */
     bool Append(T &object);
 
+    /**
+    * Gets the value from a specific index
+    *
+    * @return The value from the specific index
+    * @param The index number of the array
+    */
+    T &GetValueByIndex(unsigned index);
+
 private:
     unsigned m_capacity;
     unsigned m_used;
@@ -204,6 +212,12 @@ bool Vector<T>::Append(T &object)
     m_array[m_used] = object;
     m_used ++;
     return true;
+}
+
+template<class T>
+T &Vector<T>::GetValueByIndex(unsigned index)
+{
+    return m_array[index];
 }
 
 #endif // VECTOR_H_INCLUDED

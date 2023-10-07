@@ -165,5 +165,12 @@ int main()
     cout << endl;
     ofs << "Address After Appending Fourth Number: " << unsignedVec.GetArray() << endl;
 
+    utils.Assert(
+        "19. Test GetValueByIndex of 0 should be 10",
+        unsignedVec.GetValueByIndex(0) == 10,
+        "Index 0 returns value 10",
+        "Index 0 should be of value 10", ofs
+    );
+
     return 0;
 }
