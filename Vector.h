@@ -14,12 +14,22 @@ public:
     Vector();
 
     /**
-    * A Copy Constructor that copies other Vector to this created vector during construction.
+    * A Copy Constructor that copies other Vector to this created
+    * vector during construction.
     *
     * @param otherVector This consists of the existing vector object that will be used be passed in as a parameter to the CopyVector function.
     *
     */
     Vector(const Vector &otherVector);
+
+    /**
+    * A Overload Equals Operator that copies other Vector to this created
+    * vector during construction.
+    *
+    * @param otherVector This consists of the existing vector object that will be used be passed in as a parameter to the CopyVector function.
+    *
+    */
+    Vector &operator = (const Vector &otherVector);
 
     /**
     * Destructor which deletes and deallocates the array.
@@ -64,6 +74,24 @@ public:
     * @return The pointer pointing address value from m_array.
     */
     T *GetArray() const;
+
+    /**
+    * Resize Member function that creates a new dynamic array and copies the
+    * existing dynamic array elements into the newly created array.
+    * Deletes and set nullptr of existing array pointer.
+    * Copies new dynamic array element, deletes created array and set nullptr.
+    */
+    void Resize();
+
+    /**
+    * This member function appends the value to the end of the dynamic array.
+    * Checks condition if used slot is half of the capacity, doubles the capacity id so.
+    * Resize when condition meets.
+    *
+    * @param object The Object of the value used to be appending to the vector
+    * @return Boolean true when value appended else false
+    */
+    bool Append(T &object);
 
 private:
     unsigned m_capacity;
@@ -131,6 +159,51 @@ void Vector<T>::CopyVector(const Vector &otherVector)
     {
         m_array[i] = otherVector.m_array[i];
     }
+}
+
+template<class T>
+Vector<T> &Vector<T>::operator = (const Vector &otherVector)
+{
+    if(this != &otherVector)
+    {
+        CopyVector(otherVector);
+    }
+    return *this;
+}
+
+template<class T>
+void Vector<T>::Resize()
+{
+    unsigned newCapacity= m_capacity * 2;
+    T *newArray = new T[newCapacity];
+    if(newCapacity > m_capacity)
+    {
+        for(unsigned i(0); i < m_used; i++)
+        {
+            newArray[i] = m_array[i];
+        }
+        Deallocate(m_array);
+
+        m_array = new T[newCapacity];
+        for(unsigned i(0); i < m_used; i++)
+        {
+            m_array[i] = newArray[i];
+        }
+        Deallocate(newArray);
+    }
+    m_capacity = newCapacity;
+}
+
+template<class T>
+bool Vector<T>::Append(T &object)
+{
+    if(m_used == m_capacity / 2)
+    {
+        Resize();
+    }
+    m_array[m_used] = object;
+    m_used ++;
+    return true;
 }
 
 #endif // VECTOR_H_INCLUDED

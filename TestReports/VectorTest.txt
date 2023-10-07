@@ -25,3 +25,37 @@
 9. Test Copy Constructor: Both dynamic array pointer should be pointing at the same location
 [PASS]: Array pointer is not pointing at the same location
 
+9. Test Overload Equals Operator: Both dynamic array capacity should be the same as set to 2
+[PASS]: Array pointer is not pointing at the same location
+
+10. Test Overload Equals Operator: Both dynamic array capacity should be the same as set to 2
+[PASS]: Array pointer is not pointing at the same location
+
+11. Test Append Member Function: Appending first value capacity as 2
+[PASS]: Expected: 2 | Actual: 2
+
+12. Test Append Member Function: Appending first value used as 1
+[PASS]: Expected: 1 | Actual: 1
+
+Address After Appending First Number: 0xcc18d0
+13. Test Append Member Function: Appending second value capacity as 4
+[PASS]: Expected: 4 | Actual: 4
+
+14. Test Append Member Function: Appending second value used as 2
+[PASS]: Expected: 2 | Actual: 2
+
+Address After Appending Second Number: 0xcc0578
+15. Test Append Member Function: Appending second value capacity as 8
+[PASS]: Expected: 8 | Actual: 8
+
+16. Test Append Member Function: Appending second value used as 3
+[PASS]: Expected: 3 | Actual: 3
+
+Address After Appending Third Number: 0xcca9f8
+17. Test Append Member Function: Appending second value capacity as 8
+[PASS]: Expected: 8 | Actual: 8
+
+18. Test Append Member Function: Appending second value used as 4
+[PASS]: Expected: 4 | Actual: 4
+
+Address After Appending Fourth Number: 0xcca9f8
